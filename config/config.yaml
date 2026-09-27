@@ -1,0 +1,7 @@
+input_file: "data/input.xlsx"
+
+database:
+  host: "localhost"
+  port: 5432
+  database: "etl_project"
+  username: "postgres"

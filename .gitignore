@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+
+# Runtime files
+logs/
+data/*.xlsx
+quarantine/*.csv
