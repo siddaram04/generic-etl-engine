@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine
 from sqlalchemy.engine import URL
-
 from config_loader import load_config
 import os
 from dotenv import load_dotenv
@@ -36,7 +35,19 @@ def create_database_connection():
 
     return engine
 
+def load_data(df, table_name):
 
+    engine = create_database_connection()
+
+    df.to_sql(
+        table_name,
+        engine,
+        if_exists="replace",
+        index=False
+    )
+
+    print(f"{len(df)} records loaded into {table_name}")
+    
 if __name__ == "__main__":
 
     engine = create_database_connection()
